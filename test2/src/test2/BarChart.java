@@ -33,12 +33,12 @@ public class BarChart {
                            );
        CategoryPlot plot=chart.getCategoryPlot();//获取图表区域对象
        CategoryAxis domainAxis=plot.getDomainAxis();         //水平底部列表
-        domainAxis.setLabelFont(new Font("黑体",Font.BOLD,14));         //水平底部标题
-        domainAxis.setTickLabelFont(new Font("宋体",Font.BOLD,12));  //垂直标题
-        ValueAxis rangeAxis=plot.getRangeAxis();//获取柱状
-        rangeAxis.setLabelFont(new Font("黑体",Font.BOLD,15));
-         chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 15));
-         chart.getTitle().setFont(new Font("宋体",Font.BOLD,20));//设置标题字体
+       domainAxis.setLabelFont(new Font("黑体",Font.BOLD,14));         //水平底部标题
+       domainAxis.setTickLabelFont(new Font("宋体",Font.BOLD,12));  //垂直标题
+       ValueAxis rangeAxis=plot.getRangeAxis();//获取柱状
+       rangeAxis.setLabelFont(new Font("黑体",Font.BOLD,15));
+       chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 15));
+       chart.getTitle().setFont(new Font("宋体",Font.BOLD,20));//设置标题字体
          
          frame1=new ChartPanel(chart,true);  //这里也可以用chartFrame,可以直接生成一个独立的Frame
 	}
