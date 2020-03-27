@@ -26,27 +26,27 @@ import java.util.Scanner;
 public class BarChart {
 	ChartPanel frame1;
 	public  BarChart() throws ParseException{
-		CategoryDataset dataset = getDataSet();//½«»ñµÃµÄÊı¾İ´«µİ¸øCategoryDatasetÀàµÄ¶ÔÏó
+		CategoryDataset dataset = getDataSet();//å°†è·å¾—çš„æ•°æ®ä¼ é€’ç»™CategoryDatasetç±»çš„å¯¹è±¡
        JFreeChart chart = ChartFactory.createBarChart3D(
-      		                 "ÒßÇéÍ³¼Æ±í", // Í¼±í±êÌâ
-                           "Í³¼ÆÏîÄ¿", // Ä¿Â¼ÖáµÄÏÔÊ¾±êÇ©
-                           "ÈËÊı", // ÊıÖµÖáµÄÏÔÊ¾±êÇ©
-                           dataset, // Êı¾İ¼¯
-                           PlotOrientation.VERTICAL, // Í¼±í·½Ïò£ºË®Æ½¡¢´¹Ö±
-                           true, // ÊÇ·ñÏÔÊ¾Í¼Àı(¶ÔÓÚ¼òµ¥µÄÖù×´Í¼±ØĞëÊÇfalse)
-                           false,  // ÊÇ·ñÉú³É¹¤¾ß
-                           false  // ÊÇ·ñÉú³ÉURLÁ´½Ó
+      		                 "ç–«æƒ…ç»Ÿè®¡è¡¨", // å›¾è¡¨æ ‡é¢˜
+                           "ç»Ÿè®¡é¡¹ç›®", // ç›®å½•è½´çš„æ˜¾ç¤ºæ ‡ç­¾
+                           "äººæ•°", // æ•°å€¼è½´çš„æ˜¾ç¤ºæ ‡ç­¾
+                           dataset, // æ•°æ®é›†
+                           PlotOrientation.VERTICAL, // å›¾è¡¨æ–¹å‘ï¼šæ°´å¹³ã€å‚ç›´
+                           true, // æ˜¯å¦æ˜¾ç¤ºå›¾ä¾‹(å¯¹äºç®€å•çš„æŸ±çŠ¶å›¾å¿…é¡»æ˜¯false)
+                           false,  // æ˜¯å¦ç”Ÿæˆå·¥å…·
+                           false  // æ˜¯å¦ç”ŸæˆURLé“¾æ¥
                            );
-       CategoryPlot plot=chart.getCategoryPlot();//»ñÈ¡Í¼±íÇøÓò¶ÔÏó
-       CategoryAxis domainAxis=plot.getDomainAxis();         //Ë®Æ½µ×²¿ÁĞ±í
-        domainAxis.setLabelFont(new Font("ºÚÌå",Font.BOLD,14));         //Ë®Æ½µ×²¿±êÌâ
-        domainAxis.setTickLabelFont(new Font("ËÎÌå",Font.BOLD,12));  //´¹Ö±±êÌâ
-        ValueAxis rangeAxis=plot.getRangeAxis();//»ñÈ¡Öù×´
-        rangeAxis.setLabelFont(new Font("ºÚÌå",Font.BOLD,15));
-         chart.getLegend().setItemFont(new Font("ºÚÌå", Font.BOLD, 15));
-         chart.getTitle().setFont(new Font("ËÎÌå",Font.BOLD,20));//ÉèÖÃ±êÌâ×ÖÌå
+       CategoryPlot plot=chart.getCategoryPlot();//è·å–å›¾è¡¨åŒºåŸŸå¯¹è±¡
+       CategoryAxis domainAxis=plot.getDomainAxis();         //æ°´å¹³åº•éƒ¨åˆ—è¡¨
+       domainAxis.setLabelFont(new Font("é»‘ä½“",Font.BOLD,14));         //æ°´å¹³åº•éƒ¨æ ‡é¢˜
+       domainAxis.setTickLabelFont(new Font("å®‹ä½“",Font.BOLD,12));  //å‚ç›´æ ‡é¢˜
+       ValueAxis rangeAxis=plot.getRangeAxis();//è·å–æŸ±çŠ¶
+       rangeAxis.setLabelFont(new Font("é»‘ä½“",Font.BOLD,15));
+       chart.getLegend().setItemFont(new Font("é»‘ä½“", Font.BOLD, 15));
+       chart.getTitle().setFont(new Font("å®‹ä½“",Font.BOLD,20));//è®¾ç½®æ ‡é¢˜å­—ä½“
          
-         frame1=new ChartPanel(chart,true);  //ÕâÀïÒ²¿ÉÒÔÓÃchartFrame,¿ÉÒÔÖ±½ÓÉú³ÉÒ»¸ö¶ÀÁ¢µÄFrame
+         frame1=new ChartPanel(chart,true);  //è¿™é‡Œä¹Ÿå¯ä»¥ç”¨chartFrame,å¯ä»¥ç›´æ¥ç”Ÿæˆä¸€ä¸ªç‹¬ç«‹çš„Frame
 	}
 	private static CategoryDataset getDataSet() throws ParseException
 	{
@@ -56,11 +56,11 @@ public class BarChart {
         int count4=0;
         Scanner sc = new Scanner(System.in);
         try {
-			Workbook book = Workbook.getWorkbook(new File("test1.xls"));
-			Sheet sheet =book.getSheet(0);
-			int rows =sheet.getRows();
+	        Workbook book = Workbook.getWorkbook(new File("test1.xls"));
+		Sheet sheet =book.getSheet(0);
+		int rows =sheet.getRows();
 	        int cols =sheet.getColumns();
-	        System.out.println("ÇëÊäÈëÑ§ºÅ£º");
+	        System.out.println("è¯·è¾“å…¥å­¦å·ï¼š");
     		String Id = sc.nextLine();
     		for(int i=1;i<rows;i++)
     		{
@@ -75,30 +75,30 @@ public class BarChart {
 		            String a3 =sheet.getCell(6, i).getContents();
 		            String a4 =sheet.getCell(7, i).getContents();
 		            System.out.println(id+"   "+name+"    "+sex+"  "+date+"    "+a1+"  "+a2+"   "+a3+"   "+a4);
-		            if(a1.equals("ÊÇ"))
+		            if(a1.equals("æ˜¯"))
 		        		count1++;
-		        	if(a2.equals("ÊÇ"))
+		        	if(a2.equals("æ˜¯"))
 		        		count2++;
-		        	if(a3.equals("ÊÇ"))
+		        	if(a3.equals("æ˜¯"))
 		        		count3++;
-		        	if(a4.equals("ÊÇ"))
+		        	if(a4.equals("æ˜¯"))
 		        		count4++;
     			}
     		}
 	        
 	        
 		} catch (BiffException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(count1, "ÊÇ·ñÔÚÎäºº", "ÊÇ·ñÔÚÎäºº");
-        dataset.addValue(count2, "ÊÇ·ñºş±±£¨²»º¬Îäºº£©", "ÊÇ·ñºş±±£¨²»º¬Îäºº£©");
-        dataset.addValue(count3, "ÊÇ·ñÓĞÒßÇéÒÉËÆÖ¢×´", "ÊÇ·ñÓĞÒßÇéÒÉËÆÖ¢×´");
-        dataset.addValue(count4, "ÊÇ·ñÒÑÈ·ÈÏ±»¸ĞÈ¾", "ÊÇ·ñÒÑÈ·ÈÏ±»¸ĞÈ¾");
+        dataset.addValue(count1, "æ˜¯å¦åœ¨æ­¦æ±‰", "æ˜¯å¦åœ¨æ­¦æ±‰");
+        dataset.addValue(count2, "æ˜¯å¦æ¹–åŒ—ï¼ˆä¸å«æ­¦æ±‰ï¼‰", "æ˜¯å¦æ¹–åŒ—ï¼ˆä¸å«æ­¦æ±‰ï¼‰");
+        dataset.addValue(count3, "æ˜¯å¦æœ‰ç–«æƒ…ç–‘ä¼¼ç—‡çŠ¶", "æ˜¯å¦æœ‰ç–«æƒ…ç–‘ä¼¼ç—‡çŠ¶");
+        dataset.addValue(count4, "æ˜¯å¦å·²ç¡®è®¤è¢«æ„ŸæŸ“", "æ˜¯å¦å·²ç¡®è®¤è¢«æ„ŸæŸ“");
         return dataset;
 	}
 	
@@ -107,9 +107,9 @@ public class BarChart {
 	}
 
 	public static void main(String[] args) throws ParseException {
-		JFrame frame=new JFrame("ÒßÇéÍ³¼Æ±í");
+		JFrame frame=new JFrame("ç–«æƒ…ç»Ÿè®¡è¡¨");
 		frame.setLayout(new GridLayout(2,2,10,10));
-		frame.add(new BarChart().getChartPanel());   //Ìí¼ÓÖùĞÎÍ¼
+		frame.add(new BarChart().getChartPanel());   //æ·»åŠ æŸ±å½¢å›¾
 		frame.setBounds(0, 0, 900, 800);
 		frame.setVisible(true);
 
